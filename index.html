@@ -36,11 +36,11 @@
             transition: transform 0.5s ease;
         }
         
-        #contact-form .form-input {
+        #contact-form .form-input, #tutor-form .form-input {
             transition: all 0.3s ease;
         }
         
-        #contact-form .form-input:focus {
+        #contact-form .form-input:focus, #tutor-form .form-input:focus {
             box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.3);
         }
         footer {
@@ -181,7 +181,7 @@
     <nav class="bg-white shadow-md sticky top-0 z-50">
         <div class="container mx-auto px-6 py-3 flex justify-between items-center">
             <div class="flex items-center space-x-4">
-                <div class="w-10 h-10 flex items-center justify-center bg-blue-600 text-white rounded-full font-bold text-xl">EE</div>
+                <div class="w-10 h-10 flex items-center justify-center bg-blue-600 text-white rounded-full font-bold text-xl">AL</div>
                 <span class="text-xl font-semibold text-gray-800">Achievers Lane</span>
             </div>
             
@@ -189,6 +189,7 @@
                 <a href="#home" class="nav-link text-gray-600 hover:text-blue-600">Home</a>
                 <a href="#about" class="nav-link text-gray-600 hover:text-blue-600">About</a>
                 <a href="#subjects" class="nav-link text-gray-600 hover:text-blue-600">Subjects</a>
+                <a href="#tutor-registration" class="nav-link text-gray-600 hover:text-blue-600">Become a Tutor</a>
                 <a href="#contact" class="nav-link text-gray-600 hover:text-blue-600">Contact</a>
             </div>
             
@@ -204,6 +205,7 @@
                 <a href="#home" class="text-gray-600 hover:text-blue-600">Home</a>
                 <a href="#about" class="text-gray-600 hover:text-blue-600">About</a>
                 <a href="#subjects" class="text-gray-600 hover:text-blue-600">Subjects</a>
+                <a href="#tutor-registration" class="text-gray-600 hover:text-blue-600">Become a Tutor</a>
                 <a href="#contact" class="text-gray-600 hover:text-blue-600">Contact</a>
             </div>
         </div>
@@ -345,6 +347,46 @@
             </div>
         </div>
     </section>
+    
+    <section id="tutor-registration" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800 mb-4">Join Our Team of Expert Tutors</h2>
+                <p class="text-xl text-gray-600 max-w-3xl mx-auto">We're always looking for passionate, experienced educators to help our students succeed. If you're an expert in your field, we'd love to hear from you.</p>
+            </div>
+            
+            <div id="tutor-form" class="bg-gray-50 p-8 rounded-xl max-w-2xl mx-auto">
+                <h3 class="text-2xl font-semibold text-blue-700 mb-4">Tutor Application Form</h3>
+                <form action="https://api.web3forms.com/submit" method="POST">
+                    <input type="hidden" name="apikey" value="c6cd8569-8674-4eec-851b-cdec246fcda5">
+                    <input type="hidden" name="type" value="Tutor Application">
+                    <div class="form-group mb-4">
+                        <label for="tutor-name" class="block text-gray-700 font-semibold mb-2">Full Name</label>
+                        <input type="text" id="tutor-name" name="name" class="form-input w-full px-4 py-2 border rounded-md focus:ring focus:ring-blue-300" required>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="tutor-email" class="block text-gray-700 font-semibold mb-2">Email</label>
+                        <input type="email" id="tutor-email" name="email" class="form-input w-full px-4 py-2 border rounded-md focus:ring focus:ring-blue-300" required>
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="tutor-phone" class="block text-gray-700 font-semibold mb-2">Phone Number</label>
+                        <input type="tel" id="tutor-phone" name="phone" class="form-input w-full px-4 py-2 border rounded-md focus:ring focus:ring-blue-300">
+                    </div>
+                    <div class="form-group mb-4">
+                        <label for="tutor-subjects" class="block text-gray-700 font-semibold mb-2">Subjects You Can Teach</label>
+                        <textarea id="tutor-subjects" name="subjects" rows="3" class="form-input w-full px-4 py-2 border rounded-md focus:ring focus:ring-blue-300" placeholder="e.g., AP Calculus, High School Physics, English Literature" required></textarea>
+                    </div>
+                    <div class="form-group mb-6">
+                        <label for="tutor-message" class="block text-gray-700 font-semibold mb-2">Tell Us About Your Experience</label>
+                        <textarea id="tutor-message" name="message" rows="5" class="form-input w-full px-4 py-2 border rounded-md focus:ring focus:ring-blue-300" placeholder="Briefly describe your tutoring philosophy, experience, and academic background."></textarea>
+                    </div>
+                    <button type="submit" class="bg-blue-600 text-white px-6 py-3 rounded-md font-semibold hover:bg-blue-700 transition duration-300 w-full">
+                        Submit Application
+                    </button>
+                </form>
+            </div>
+        </div>
+    </section>
 
     <section id="contact" class="py-20 bg-white">
         <div class="container mx-auto px-6">
@@ -358,15 +400,15 @@
                     <h2 class="text-2xl font-semibold text-blue-700 mb-4">Send Us a Message</h2>
                     <form action="https://api.web3forms.com/submit" method="POST">
                         <input type="hidden" name="apikey" value="c6cd8569-8674-4eec-851b-cdec246fcda5">
-                        <div class="form-group">
+                        <div class="form-group mb-4">
                             <label for="name" class="block text-gray-700 font-semibold mb-2">Name</label>
                             <input type="text" id="name" name="name" class="form-input w-full px-4 py-2 border rounded-md focus:ring focus:ring-blue-300" required>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-4">
                             <label for="email" class="block text-gray-700 font-semibold mb-2">Email</label>
                             <input type="email" id="email" name="email" class="form-input w-full px-4 py-2 border rounded-md focus:ring focus:ring-blue-300" required>
                         </div>
-                        <div class="form-group">
+                        <div class="form-group mb-6">
                             <label for="message" class="block text-gray-700 font-semibold mb-2">Message</label>
                             <textarea id="message" name="message" rows="5" class="form-input w-full px-4 py-2 border rounded-md focus:ring focus:ring-blue-300" required></textarea>
                         </div>
